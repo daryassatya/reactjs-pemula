@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Belajar React</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const container = document.getElementById("root")
+        const root = ReactDOM.createRoot(container)
+
+        // ---- Percobaan 5 (Menambahkan props kedalam komponen bersarang)
+        function Header(props){
+            return (<h1>Belajar Bareng React WPU Bersama {props.name}</h1>)
+        }
+
+        // Penamaan menggunakan PascalCase
+        function HomePage(){
+            return (
+                // Boleh menggunakan <div>
+                <>
+                    <Header name="Dimas"/>    
+                    <Header name="Aryasatya"/>    
+                </>
+            )
+        }
+        root.render(<HomePage/>)
+    </script>
+</body>
+
+</html>

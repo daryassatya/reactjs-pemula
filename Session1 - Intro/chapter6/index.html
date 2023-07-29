@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <title>Belajar React</title>
+</head>
+
+<body>
+    <div id="root"></div>
+    <script type="text/babel">
+        const container = document.getElementById("root")
+        const root = ReactDOM.createRoot(container)
+
+        // ---- Percobaan 6 (Props Refactor)
+        // Menggunakan Destructuring, Ternary Operator
+        function Header({name}){
+            //Terjemahan : Jika nilai dari name ada, maka gunakan name, jika tidak, gunakan string Dimas
+            //return (<h1>Belajar Bareng React WPU Bersama {name ? name : 'Dimas'}</h1>)
+            return (<h1>Belajar Bareng React WPU Bersama {name ?? 'Dimas'}</h1>)
+        }
+
+        // Penamaan menggunakan PascalCase
+        function HomePage(){
+            return (
+                // Boleh menggunakan <div>
+                <>
+                    <Header />    
+                    <Header name="Aryasatya"/>    
+                </>
+            )
+        }
+        root.render(<HomePage/>)
+
+    </script>
+</body>
+
+</html>
